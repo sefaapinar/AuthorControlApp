@@ -1,0 +1,59 @@
+﻿@model List<MakaleModel.Makale>
+@{
+    Layout = "~/Views/Shared/_siteLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Adı</th>
+                    <th>YayinTarihi</th>
+                    <th>DergiNo</th>
+                    <th>MakaleTurNo</th>
+                    <th>EndeksNo</th>
+                    <th>Ozet</th>
+
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var makale in Model)
+                {
+                    <tr>
+                        <td>@makale.No</td>
+                        <td>@makale.Ad</td>
+                        <td>@makale.YayinTarihi</td>
+                        <td>@makale.DergiNo</td>
+                        <td>@makale.MakaleTuruNo</td>
+                        <td>@makale.EndeksNo</td>
+                        <td>@makale.Ozet</td>
+
+
+
+
+
+                        <td>
+                            <a class="btn btn-primary" href="/Makale/MakaleGuncelle/@makale.No">Güncelle</a>
+                        </td>
+                        <td>
+                            <form method="post" action="/Makale/MakaleSil">
+                                <input type="hidden" value="@makale.No" name="MakaleNo" />
+                                <button class="btn btn-danger" type="submit">
+                                    Sil
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

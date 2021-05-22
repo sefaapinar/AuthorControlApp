@@ -1,0 +1,33 @@
+﻿body {
+    font-family: sans-serif;
+    background-color: #eee;
+    padding: 5px;
+}
+#menu ul{
+    
+    padding:0px;
+    margin: 0px;
+    list-style:none;
+}
+#baslik {
+    height: auto;
+    border-style: solid;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 5px;
+    background-color:chartreuse;
+}
+#footer {
+    height: 340px;
+    border-style: solid;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top:20%;
+    padding: 40px;
+    background-color: chartreuse;
+}
+.KategoriDiv{
+    float:left;
+    background-color:aqua;
+    height:500px;
+}

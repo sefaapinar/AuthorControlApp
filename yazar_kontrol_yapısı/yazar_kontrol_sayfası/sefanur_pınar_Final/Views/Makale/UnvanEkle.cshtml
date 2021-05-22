@@ -1,0 +1,49 @@
+﻿@model List<MakaleModel.Unvan>
+@{
+    Layout = "~/Views/Shared/_siteLayout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Numara</th>
+                    <th>Unvan Adı</th>
+                    <th>Unvan Kısa Adı</th>
+                  
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var unvan in Model)
+                {
+                    <tr>
+                        <td>@unvan.No</td>
+                        <td>@unvan.Ad</td>
+                        <td>@unvan.KisaAd</td>
+                     
+
+
+                        <td>
+                            <a class="btn btn-primary" href="/Unvan/UnvanGuncelle/@unvan.No">Güncelle</a>
+                        </td>
+                        <td>
+                            <form method="post" action="/Unvan/UnvanSil">
+                                <input type="hidden" value="@unvan.No" name="UnvanNo" />
+                                <button class="btn btn-danger" type="submit">
+                                    Sil
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+﻿@model List<MakaleModel.Kategori>
+@{
+    Layout = "~/Views/Shared/_siteLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Adı</th>
+                   
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var kategori in Model)
+                {
+                    <tr>
+                        <td>@kategori.No</td>
+                        <td>@kategori.Ad</td>
+                       
+
+
+                        <td>
+                            <a class="btn btn-primary" href="/Makale/KategoriGuncelle/@kategori.No">Güncelle</a>
+                        </td>
+                        <td>
+                            <form method="post" action="/Makale/KategoriSil">
+                                <input type="hidden" value="@kategori.No" name="KategoriNo" />
+                                <button class="btn btn-danger" type="submit">
+                                    Sil
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
